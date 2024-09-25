@@ -1,0 +1,23 @@
+﻿<Window x:Class="POO_Practica2.Practicas.formFiguras"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:POO_Practica2.Practicas"
+        mc:Ignorable="d"
+        Title="formFiguras" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="btnCirculo" Content="Circulo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="151,10,0,0" RenderTransformOrigin="4.012,1.519" Click="btnCirculo_Click"/>
+        <Button x:Name="btnCuadrado" Content="Cuadrado" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="348,10,0,0" Click="btnCuadrado_Click"/>
+        <Button x:Name="btnTriangulo" Content="Triangulo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="245,10,0,0" Click="btnTriangulo_Click"/>
+        <Button x:Name="btnRombo" Content="Rombo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="550,10,0,0" RenderTransformOrigin="4.012,1.519" Click="btnRombo_Click"/>
+        <Button x:Name="btnRectangulo" Content="Rectangulo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="449,10,0,0" RenderTransformOrigin="4.012,1.519" Click="btnRectangulo_Click"/>
+        <TextBox x:Name="txtPerimetro" HorizontalAlignment="Left" Height="23" Margin="344,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Lado/Radio/base" HorizontalAlignment="Left" Margin="221,108,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtResult" HorizontalAlignment="Left" Height="23" Margin="343,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True" IsEnabled="False"/>
+        <Label Content="Resultado" HorizontalAlignment="Left" Margin="258,176,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtAltura" HorizontalAlignment="Left" Height="23" Margin="344,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Altura" HorizontalAlignment="Left" Margin="221,136,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
