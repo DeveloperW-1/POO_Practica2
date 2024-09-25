@@ -45,5 +45,45 @@ namespace POO_Practica2.Practicas
                 reader.Close();
             }
         }
+
+        private void miAgregar_Click(object sender, RoutedEventArgs e)
+        {
+            string query = "SELECT * FROM categories WHERE CategoryId = @CategoryId";
+            string querysave = "INSERT INTO categories (categoryname, description) VALUES (@CategoryName, @Description)";
+            string queryupdate = "UPDATE categories SET categoryname = @CategoryName, description = @Description WHERE CategoryID = @CategoryId";
+            using (SqlConnection conn = new SqlConnection("Data Source=WILVER\\SQLEXPRESS;Initial Catalog=NORTHWIND;Integrated Security=True"))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@CategoryID", txtID.Text);
+
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    // Modificar
+                    SqlCommand cmdupdate = new SqlCommand(queryupdate, conn);
+                    cmdupdate.Parameters.AddWithValue("@CategoryId", txtID.Text);
+                    cmdupdate.Parameters.AddWithValue("@CategoryName", txtnombre.Text);
+                    cmdupdate.Parameters.AddWithValue("@Description", txtDescripcion.Text);
+
+                    reader.Close();
+
+                    cmdupdate.ExecuteNonQuery();
+                }
+                else
+                {
+                    // Grabar
+                    SqlCommand cmdsave = new SqlCommand(querysave, conn);
+                    cmdsave.Parameters.AddWithValue("@CategoryName", txtnombre.Text);
+                    cmdsave.Parameters.AddWithValue("@Description", txtDescripcion.Text);
+                    
+                    reader.Close();
+                    
+                    cmdsave.ExecuteNonQuery();
+                }
+                reader.Close();
+            }
+        }
     }
 }

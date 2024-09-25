@@ -12,7 +12,7 @@
         <Label Content="Descripcion" HorizontalAlignment="Left" Margin="26,178,0,0" VerticalAlignment="Top"/>
         <Label Content="Imagen" HorizontalAlignment="Left" Margin="26,311,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtID" HorizontalAlignment="Left" Height="23" Margin="120,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="49"/>
-        <TextBox x:Name="txtnombre" HorizontalAlignment="Left" Height="23" Margin="120,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtnombre" HorizontalAlignment="Left" Height="23" Margin="120,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" MaxLength="15"/>
         <TextBox x:Name="txtDescripcion" HorizontalAlignment="Left" Height="93" Margin="120,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="238"/>
         <Image x:Name="pbPicture" HorizontalAlignment="Left" Height="100" Margin="120,292,0,0" VerticalAlignment="Top" Width="100"/>
         <ToolBar HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="132" Margin="0,25,0,0">
@@ -21,7 +21,7 @@
                     <ImageBrush ImageSource="buscar.png" Stretch="Uniform"/>
                 </Button.Background>
             </Button>
-            <Button Height="24" Margin="0,0,0,-3.2" Width="31">
+            <Button x:Name="miAgregar" Height="24" Margin="0,0,0,-3.2" Width="31" Click="miAgregar_Click">
                 <Button.Background>
                     <ImageBrush ImageSource="agregar-producto.png" Stretch="UniformToFill"/>
                 </Button.Background>
