@@ -31,7 +31,7 @@
                     <ImageBrush ImageSource="disquete.png" Stretch="Uniform"/>
                 </Button.Background>
             </Button>
-            <Button Height="24" Margin="0,0,0,-3.2" Width="23">
+            <Button x:Name="miBorrar" Height="24" Margin="0,0,0,-3.2" Width="23" VerticalAlignment="Top" Click="miBorrar_Click">
                 <Button.Background>
                     <ImageBrush ImageSource="eliminar.png" Stretch="Uniform"/>
                 </Button.Background>
