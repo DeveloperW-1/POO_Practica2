@@ -45,5 +45,11 @@ namespace POO_Practica2
             Practicas.frmCategorias x = new Practicas.frmCategorias();
             x.Show();
         }
+
+        private void miRegiones_Click(object sender, RoutedEventArgs e)
+        {
+            Datos.frmRegion x = new Datos.frmRegion();
+            x.Show();
+        }
     }
 }

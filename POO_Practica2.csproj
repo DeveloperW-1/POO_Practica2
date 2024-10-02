@@ -108,6 +108,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Datos\frmRegion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -118,7 +122,11 @@
     </Compile>
     <Compile Include="Clases\clCategorias.cs" />
     <Compile Include="Clases\clFiguras.cs" />
+    <Compile Include="Clases\clGlobales.cs" />
     <Compile Include="Clases\clOperaciones.cs" />
+    <Compile Include="Datos\frmRegion.xaml.cs">
+      <DependentUpon>frmRegion.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -172,9 +180,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Datos\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Practicas\agregar-producto.png" />
   </ItemGroup>

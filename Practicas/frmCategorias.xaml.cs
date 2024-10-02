@@ -28,7 +28,7 @@ namespace POO_Practica2.Practicas
         void cargarFolio()
         {
             string query = "SELECT MAX(categoryid)+1 AS Folio FROM categories";
-            using (SqlConnection conn = new SqlConnection("Data Source=WILVER\\SQLEXPRESS;Initial Catalog=NORTHWIND;Integrated Security=True"))
+            using (SqlConnection conn = new SqlConnection(Clases.clGlobales.globales.miconexion))
             {
                 SqlCommand cmd = new SqlCommand(query, conn);
 
@@ -47,7 +47,7 @@ namespace POO_Practica2.Practicas
         private void miBuscar_Click(object sender, RoutedEventArgs e)
         {
             string query = "SELECT * FROM categories WHERE CategoryId = @CategoryId";
-            using (SqlConnection conn = new SqlConnection("Data Source=WILVER\\SQLEXPRESS;Initial Catalog=NORTHWIND;Integrated Security=True"))
+            using (SqlConnection conn = new SqlConnection(Clases.clGlobales.globales.miconexion))
             {
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@CategoryId", txtID.Text);
@@ -73,7 +73,7 @@ namespace POO_Practica2.Practicas
             string query = "SELECT * FROM categories WHERE CategoryId = @CategoryId";
             string querysave = "INSERT INTO categories (categoryname, description) VALUES (@CategoryName, @Description)";
             string queryupdate = "UPDATE categories SET categoryname = @CategoryName, description = @Description WHERE CategoryID = @CategoryId";
-            using (SqlConnection conn = new SqlConnection("Data Source=WILVER\\SQLEXPRESS;Initial Catalog=NORTHWIND;Integrated Security=True"))
+            using (SqlConnection conn = new SqlConnection(Clases.clGlobales.globales.miconexion))
             {
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@CategoryID", txtID.Text);
@@ -123,7 +123,7 @@ namespace POO_Practica2.Practicas
             string queryCheck = "SELECT COUNT(*) FROM categories WHERE CategoryId = @CategoryId";
             string queryDelete = "DELETE FROM categories WHERE CategoryId = @CategoryId";
 
-            using (SqlConnection conn = new SqlConnection("Data Source=WILVER\\SQLEXPRESS;Initial Catalog=NORTHWIND;Integrated Security=True"))
+            using (SqlConnection conn = new SqlConnection(Clases.clGlobales.globales.miconexion))
             {
                 SqlCommand cmdCheck = new SqlCommand(queryCheck, conn);
                 cmdCheck.Parameters.AddWithValue("@CategoryId", txtID.Text);
